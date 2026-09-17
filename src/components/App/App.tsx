@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { fetchMovies } from "../../services/api";
 
 import SearchBar from "../SearchBar/SearchBar";
 import MovieList from "../MovieList/MovieList";
@@ -18,23 +18,6 @@ const ReactPaginate = (
     ComponentType<ReactPaginateProps>
   >
 ).default;
-
-const API_KEY = "b460356f399ded092a20e81497054552";
-
-const fetchMovies = async (query: string, page: number) => {
-  const response = await axios.get(
-    "https://api.themoviedb.org/3/search/movie",
-    {
-      params: {
-        api_key: API_KEY,
-        query,
-        page,
-      },
-    }
-  );
-
-  return response.data;
-};
 
 export default function App() {
   const [query, setQuery] = useState("");
