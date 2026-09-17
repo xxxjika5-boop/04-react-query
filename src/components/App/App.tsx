@@ -57,7 +57,6 @@ export default function App() {
         }}
       />
 
-      {/* Pagination ABOVE movie list */}
       {totalPages > 1 && (
         <ReactPaginate
           pageCount={totalPages}
