@@ -32,7 +32,6 @@ export default function App() {
   const {
     data,
     isPending,
-    isFetching,
     isError,
     isSuccess,
   } = useQuery({
@@ -46,7 +45,7 @@ export default function App() {
 
   function handleSearch(value: string) {
     setQuery(value);
-    setPage(1); // важливо: скидаємо сторінку при новому пошуку
+    setPage(1); 
   }
 
 useEffect(() => {
@@ -80,8 +79,7 @@ useEffect(() => {
       )}
 
       {query && isPending && <Loader />}
-      {query && isFetching && <Loader />}
-      {isError && <ErrorMessage text="Error loading movies" />}
+      {query && isError && <ErrorMessage text="Error loading movies" />}
 
       {isSuccess && data.results.length > 0 && (
         <MovieGrid movies={data.results} onSelect={setSelectedMovie} />
