@@ -11,7 +11,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(value);
-    setValue(""); // очищаем строку здесь
+    setValue(""); 
   };
 
   return (

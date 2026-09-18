@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div>
-      {/* Search */}
+
       <SearchBar
         onSearch={(value) => {
           setQuery(value);
@@ -58,7 +58,7 @@ export default function App() {
       {isError && <ErrorMessage text="Error loading movies" />}
 
       {data && data.results.length === 0 && (
-        <ErrorMessage text="No movies found for your request." />
+        <ErrorMessage text="There was an error, please try again..." />
       )}
 
       {data && data.results.length > 0 && (
